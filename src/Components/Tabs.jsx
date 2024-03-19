@@ -8,6 +8,11 @@ import { DataContext } from './DataProvider';
 const TabComponent=()=> {
   const [activeTab, setActiveTab] = useState("params");
   const {paramData, setParamData, headerData, setHeaderData}=useContext(DataContext);
+  const [keys, setKeys]=useState([]);
+  const [values, setValues]=useState([]);
+
+  console.log(paramData);
+
   const handleTabSelect = (tab) => {
     setActiveTab(tab);
   };

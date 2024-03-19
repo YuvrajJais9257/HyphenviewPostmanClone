@@ -42,10 +42,12 @@ const FormComponent=({onSendClick})=>{
     const handleChangeRequest=(newRequest)=>{
         setRequestType(newRequest);
         setFormData({...formData, type: newRequest});
+        console.log(formData.type);
       }
     
     const onURLChange=(e)=>{
         setFormData({...formData, url: e.target.value});
+        console.log(formData.url);
     }
 
     const handleBearer=(e)=>{
@@ -199,10 +201,7 @@ const FormComponent=({onSendClick})=>{
       )}
             </div>
             <div className="btn-container">
-        <Button style={{marginTop:'15px'}}  variant='primary' onClick={()=>{
-          
-        onSendClick();
-        }}>Test Connection</Button>
+        <Button style={{marginTop:'15px'}}  variant='primary' onClick={()=>{onSendClick()}}>Test Connection</Button>
       </div>
         </div>
         </>
