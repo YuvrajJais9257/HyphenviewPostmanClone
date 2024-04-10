@@ -4,3 +4,20 @@
     justify-content: flex-end;
     margin-top: 10px;
   }
+
+  #page{
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    height: 24px;
+    margin-right: 7px;
+    margin-top: 7px;
+    border-radius: 15px;
+    color: #fff;
+    background-color: blueviolet;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  #page:hover{
+    transform: scale(1.1);
+  }

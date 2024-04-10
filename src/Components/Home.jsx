@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { ReactDOM } from "react";
-import "../Components/Home.css";
-import FormComponent from "./Forms";
-import TabComponent from "./Tabs";
-import Response from "./Response";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import ErrorScreen from "./ErrorScreen";
 import { useContext } from "react";
 import { DataContext } from "./DataProvider";
 import { checkParams } from "./Utils";
 import SnackBarComponent from "./SnackBar";
+import { ReactDOM } from "react";
+import "../Components/Home.css";
+import FormComponent from "./Forms";
+import TabComponent from "./Tabs";
+
 import { getData } from "./API";
+const Response = lazy(() => import("./Response"));
+
 const Home = () => {
   const {
     formData,
@@ -91,7 +93,13 @@ const Home = () => {
     <div className="home">
       <FormComponent onSendClick={onSendClick} />
       <TabComponent />
-      {errorResponse ? <ErrorScreen /> : <Response data={apiResponse} />}
+      {errorResponse ? (
+        <ErrorScreen />
+      ) : (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Response data={apiResponse} />
+        </Suspense>
+      )}
       {error && (
         <SnackBarComponent
           error={error}

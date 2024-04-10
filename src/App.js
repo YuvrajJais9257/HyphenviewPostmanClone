@@ -1,4 +1,5 @@
 import './App.css';
+
 import DataProvider from './Components/DataProvider';
 import Home from './Components/Home';
 function App() {
