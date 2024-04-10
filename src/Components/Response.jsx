@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Response.css";
 import { useContext } from "react";
 import { DataContext } from "./DataProvider";
+import { useNavigate } from "react-router-dom";
 
 const Response = ({ data }) => {
   const {
@@ -27,6 +28,7 @@ const Response = ({ data }) => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(33);
+  const navigate = useNavigate();
 
   let obj = data;
   let readableObj = "{\n";
@@ -36,7 +38,10 @@ const Response = ({ data }) => {
     console.log(data, "data");
     const currentPageData = Object.fromEntries(currentItems);
     const queryString = encodeURIComponent(JSON.stringify(currentPageData));
-    window.location.href = `/json-to-ui?jsonData=${queryString}`;
+
+    // Use useNavigate hook for navigation
+
+    navigate(`/json-to-ui?jsonData=${queryString}`);
   };
 
   const dataEntries = {
