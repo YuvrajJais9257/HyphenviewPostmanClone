@@ -20,7 +20,8 @@ Hyphenview Postman Clone is a powerful tool designed to simplify API testing and
 - **Highcharts Integration**: Utilize data from your API to create interactive charts with Highcharts.
 
 ## Demo
-To see Hyphenview Postman Clone in action, navigate to this `https://hyphenpostman.netlify.app/` in your web browser.
+To see the Hyphenview Postman Clone in action, navigate to [https://hyphenpostman.netlify.app/](https://hyphenpostman.netlify.app/) in your web browser.
+
 
 ## Installation
 1. **Clone the Repository**: git clone `https://github.com/YuvrajJais9257/hyphenview-postman-clone.git`
